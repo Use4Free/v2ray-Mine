@@ -1,4 +1,4 @@
-name: Mineral
+name: v2ray-Mine
 
 on:
   workflow_dispatch:
@@ -9,13 +9,13 @@ jobs:
   fishing:
     runs-on: ubuntu-latest
     concurrency:
-      group: mineral
+      group: v2ray-Mine
 
     steps:
       - uses: actions/checkout@v3
         with:
           repository: 'Use4Free/v2ray-Mine'
-          token: "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"
+          token: ${{ secrets.GIT_TOKEN }}
       - name: Get secrets
         run: |
           echo ${{ secrets.BOT_TOKEN }} > ./session
